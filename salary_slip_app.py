@@ -1,6 +1,6 @@
 """
 Salary Slip Generator - Professional Desktop Application
-Generates salary slips from Excel sheets matching RAJ PATH INFRACON format
+Generates salary slips from Excel sheets matching format
 """
 
 import tkinter as tk
@@ -81,8 +81,8 @@ def check_trial() -> dict:
 
 DEFAULT_CONFIG = {
     "password_hash": hashlib.sha256("admin123".encode()).hexdigest(),
-    "company_name": "RAJ PATH INFRACON PVT LTD",
-    "company_address": "403, Pride House, S.NO. 108, Ganeshkhind Road, Opposite Pune University, Pune 411016",
+    "company_name": "",
+    "company_address": "",
     "company_logo": "",
     "output_folder": str(Path.home() / "SalarySlips"),
     "accent_color": "#1a3a6b",
@@ -192,7 +192,7 @@ def amount_to_words(amount):
 #  PDF GENERATOR
 # ────────────────────────────────────────────────
 def generate_salary_slip_pdf(data: dict, config: dict, output_path: str):
-    """Generate one salary slip PDF matching the RAJ PATH format."""
+    """Generate one salary slip PDF matching the format."""
     doc = SimpleDocTemplate(
         output_path,
         pagesize=A4,
